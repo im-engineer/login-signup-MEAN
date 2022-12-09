@@ -13,7 +13,10 @@ const AccountSchema = new mongoose.Schema({
     gender : {type:String,enum:["Male","Female"],default:null,required:true},
     city : {type:String,default:null,required:true},
     state : {type:String,default:null,required:true},
-    country : {type:String,default:null,required:true}
+    country : {type:String,default:null,required:true},
+    otp:{type:Number},
+    verified: {type: Boolean, default: false},
+    created: {type: String,default: new Date().toISOString()},
    
 })
 
