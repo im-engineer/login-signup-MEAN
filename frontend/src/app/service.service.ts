@@ -6,13 +6,17 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class ServiceService {
+  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 
   URL = environment.apiUrl;
 
-  signup() {
-    return this.http.get(this.URL + ":9060/ekg/userType");
+  signup(body:any) {
+    console.log(body)
+    return this.http.post(this.URL + ":9898/user/create/account",body,
+    {observe : "body"}
+    );
   }
 
 }

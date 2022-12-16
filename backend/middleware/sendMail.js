@@ -10,7 +10,7 @@ export const SendEmail = (from, to, subject, text) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: email.userName,
+      user: email.username,
       pass: email.password,
     },
   });

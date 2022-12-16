@@ -1,8 +1,9 @@
 .right-side{
 width:50%;
 height:100vh;
-background-color: #357ce8;
 margin-right: rem;
+align-items: center;
+padding:8rem;
 }
 .wrapper {
     display: inline-flex;

@@ -2,10 +2,12 @@ import mongoose from "mongoose";
 import Account from "../model/Account";
 import bcrypt from "bcrypt";
 import jwt from"jsonwebtoken";
+import {SendEmail} from "../middleware/sendMail"
+
 
 export const accountCreate = async(req,res) => {
     const otp = Math.floor(Math.random() * 1234 + 1000);
-    try{
+    // try{
         const accountDatails = new Account({
             image:req.file.filename,
             firstname:req.body.firstname,
@@ -36,12 +38,12 @@ export const accountCreate = async(req,res) => {
                 message : "Something went wrong",
             })
         }
-    }catch(err){
-        res.send({
-            isSuccess:false,
-            message:err
-        })
-    }
+    // }catch(err){
+    //     res.send({
+    //         isSuccess:false,
+    //         message:err
+    //     })
+    // }
     
  
 }

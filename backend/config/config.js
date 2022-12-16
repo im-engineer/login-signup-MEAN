@@ -17,6 +17,12 @@ const config = {
             databaseName :"siddhantsingh", 
             userName :"siddhantsingh",
             password :"siddhantsingh87"
+        },
+        EMAIL:{
+            host:'smtp.gmail.com',
+            port:465,
+            username: 'azmsiddhant1@gmail.com',
+            password: 'khghxqhczbsezjtd'  
         },api_port:9898
     }
 }

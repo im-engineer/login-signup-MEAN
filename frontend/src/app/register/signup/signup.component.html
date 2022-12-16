@@ -1,61 +1,83 @@
 <div class="container">
   <div class="row">
+    <!-- <div class="profile-wrap">
+      <img [src]="image" class="profile" />
+  </div>
+  <div class="add-btn-wrap">
+      <input #fileUpload type="file" style="display: none;" class="btn chngPic" accept="image/*" name="file"
+      id="file" (change)="onFileChanged($event)" />
+      <button type="button" class="btn chngPic" (click)=" fileUpload.click() " accept="image/*" >Add
+          Photo</button>
+  </div> -->
     <div class="col-md-6">
-      <form>
+      <form [formGroup]="myform">
         <label>Firstname :</label>
         <input
           class="form-control"
           type="text"
           placeholder="Enter your firstname"
+          formControlName="firstname"
         /><br />
         <label>Middlename :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your middlename"
+          formControlName="middlename"
+
         /><br />
         <label>Lastname :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your lastname"
+          formControlName="lastname"
+
         /><br />
         <label>Fullname :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your fullname"
+          formControlName="fullname"
+          
         /><br />
         <label>Email :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your email"
+          formControlName="email"
+
         /><br />
         <label>Password :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your password"
+          formControlName="password"
+
         /><br />
         <label>Confirm Password :</label>
         <input
           class="form-control"
           type="text"
-          placeholder="Enter your firstname"
+          placeholder="Enter your confirm password"
+          formControlName="confirmpassword"
+
         /><br />
         <div class="form-group">
           <label for="gender">Gender<span class="required">*</span> </label
           ><br />
           <div class="wrapper">
-            <input type="radio" name="gender" id="option-1" value="M" />
-            <input type="radio" name="gender" id="option-2" value="F" />
+            <input type="radio" name="gender" formControlName="gender" id="option-1" value="Male" />
+            <input type="radio" name="gender" formControlName="gender" id="option-2" value="Female" />
             <label for="option-1" class="option option-1"> Male </label>
             <label for="option-2" class="option option-2"> Female </label>
           </div>
         </div>
         <br />
-        <select id="city" name="city">
+        <select id="city" formControlName="city"  name="city">
           <option value="">Select City</option>
 
           <option value="Ausa">Ausa</option>
@@ -66,7 +88,9 @@
           <option value="Boisar">Boisar</option>
         </select>
 
-        <select id="country-state" name="country-state">
+        <select id="country-state" formControlName="state" name="state">
+          <option value="">Select State</option>
+
           <option value="AN">Andaman and Nicobar Islands</option>
           <option value="AP">Andhra Pradesh</option>
           <option value="AR">Arunachal Pradesh</option>
@@ -74,13 +98,15 @@
           <option value="BR">Bihar</option>
         </select>
 
-        <select id="country" name="country">
+        <select id="country" formControlName="country" name="country">
           <option value="AN">India</option>
         </select>
 
         <button type="button" (click)="submit()">Save</button>
       </form>
     </div>
-    <div class="right-side col-md-6"></div>
+    <div class="right-side col-md-6">
+      <img src="../../../assets/image/log-in.png">
+    </div>
   </div>
 </div>
