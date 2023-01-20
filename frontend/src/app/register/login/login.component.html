@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="loginForm">
+        <label>Email :</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Enter your email"
+          formControlName="email"
+        /><br />
+        <label>Password :</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Enter your password"
+          formControlName="password"
+        /><br />
+
+        <button type="button" (click)="submit()">Save</button>
+        <p>Don't have account? <a routerLink="/signup">Signup</a></p>
+      </form>
+    </div>
+  </div>
+</div>

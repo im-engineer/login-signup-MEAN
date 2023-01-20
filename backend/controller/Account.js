@@ -9,7 +9,7 @@ export const accountCreate = async(req,res) => {
     const otp = Math.floor(Math.random() * 1234 + 1000);
     // try{
         const accountDatails = new Account({
-            image:req.file.filename,
+            // image:req.file.filename,
             firstname:req.body.firstname,
             middlename:req.body.middlename,
             lastname:req.body.lastname,
@@ -50,30 +50,30 @@ export const accountCreate = async(req,res) => {
 
 
 export const verifyOTP = async (req, res) => {
-    const EMAIL = req.body.email;
-    const OTP = req.body.otp;
-    const newotp = Math.floor(Math.random() * 1234 + 1000);
-    console.log("OLD ->", OTP, "NEW ->", newotp);
-    const isValid = await shopping.find({
+  const EMAIL = req.body.email;
+  const OTP = req.body.otp;
+  const newotp = Math.floor(Math.random() * 1234 + 1000);
+  console.log("OLD ->", OTP, "NEW ->", newotp);
+  const isValid = await Account.find({
+    email: EMAIL,
+    otp: OTP
+  }).count();
+  if (isValid) {
+    // update
+    const filter = {
       email: EMAIL,
       otp: OTP
-    }).count();
-    if (isValid) {
-      // update
-      const filter = {
-        email: EMAIL,
-        otp: OTP
-      }
-      const update = {
-        verified: true,
-        otp: newotp
-      }
-      await shopping.findOneAndUpdate(filter, update);
-      res.send({ status: true, message: "OTP VERIFIED SUCCESFULLY", result: {} })
-    } else {
-      res.send({ status: false, message: "Incorrect otp", result: {} })
     }
+    const update = {
+      verified: true,
+      otp: newotp
+    }
+    await Account.findOneAndUpdate(filter, update);
+    res.send({ status: true, message: "OTP VERIFIED SUCCESFULLY", result: {} })
+  } else {
+    res.send({ status: false, message: "Incorrect otp", result: {} })
   }
+}
 
   
 export const login = async (req, res) => {

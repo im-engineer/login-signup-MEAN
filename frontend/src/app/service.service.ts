@@ -6,7 +6,6 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class ServiceService {
-  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 
@@ -15,6 +14,19 @@ export class ServiceService {
   signup(body:any) {
     console.log(body)
     return this.http.post(this.URL + ":9898/user/create/account",body,
+    {observe : "body"}
+    );
+  }
+
+  login(body:any){
+    return this.http.post(this.URL + ":9898/user/login",body,
+    {observe : "body"}
+    );
+  }
+
+
+  verifyOtp(body:any){
+    return this.http.post(this.URL + ":9898/user/verify/otp",body,
     {observe : "body"}
     );
   }

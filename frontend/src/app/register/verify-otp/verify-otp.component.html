@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="otpVerificationForm">
+            <label>Verify Otp</label>
+            <input class="form-control" type="number" formControlName="otp" placeholder="Enter your otp"/>
+            <button type="button" (click)="submit()">Next</button>
+
+        </form>
+        </div>
+    </div>
+</div>

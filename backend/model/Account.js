@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const AccountSchema = new mongoose.Schema({
-    image : {type:String,default:null},
+    // image : {type:String,default:null},
     firstname : {type:String,default:null,required:true},
     middlename : {type:String,default:null},
     lastname : {type:String,default:null,required:true},

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl,FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
   response: any = [];
   responseData: any = [];
 
-  constructor(private service:ServiceService) { 
+  constructor(private service:ServiceService,private router: Router
+    ) { 
     this.myform = new FormGroup({
       firstname: new FormControl(null, [Validators.required]),
       middlename: new FormControl(null),
@@ -39,7 +41,8 @@ export class SignupComponent implements OnInit {
         data => {
           this.response = data;
           if (this.response.isSuccess) {
-            alert("signup")
+            // this.toastr.success(this.response.message)
+            this.router.navigate(['verify-otp']);
           } else {
           }
 
