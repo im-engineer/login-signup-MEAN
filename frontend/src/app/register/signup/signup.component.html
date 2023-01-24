@@ -95,7 +95,10 @@
           </div>
         </div>
         <br />
-        <select class="name1" id="city" formControlName="city" name="city">
+        <div class="row name1">
+          <div class="col-md-4">
+
+        <select id="city" formControlName="city" class="form-control" name="city">
           <option value="">Select City</option>
 
           <option value="Ausa">Ausa</option>
@@ -105,8 +108,10 @@
 
           <option value="Boisar">Boisar</option>
         </select>
+        </div>
+        <div class="col-md-4">
 
-        <select id="country-state" formControlName="state" name="state">
+        <select id="country-state" formControlName="state" class="form-control" placeholder="select state" name="state">
           <option value="">Select State</option>
 
           <option value="AN">Andaman and Nicobar Islands</option>
@@ -115,12 +120,14 @@
           <option value="AS">Assam</option>
           <option value="BR">Bihar</option>
         </select>
-
-        <select id="country" formControlName="country" name="country">
+        </div>
+        <div class="col-md-4">
+        <select id="country" formControlName="country" class="form-control" name="country">
           <option value="AN">India</option>
         </select>
-
-        <button type="button" (click)="submit()">Save</button>
+        </div>
+      </div><br/>
+        <button type="button" class="btn btn-dark name1" (click)="submit()">Save</button>
 
         <p class="name1">Already've account ?<a routerLink="">Login</a> </p>
       </form>
