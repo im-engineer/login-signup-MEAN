@@ -58,6 +58,7 @@ export const verifyOTP = async (req, res) => {
     email: EMAIL,
     otp: OTP
   }).count();
+  console.log("🚀 ~ file: Account.js:61 ~ verifyOTP ~ isValid", isValid);
   if (isValid) {
     // update
     const filter = {

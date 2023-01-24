@@ -1,0 +1,12 @@
+#dot {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(223, 98, 98);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .name{
+    margin-top: 20%;
+    margin-left:20rem;
+  }

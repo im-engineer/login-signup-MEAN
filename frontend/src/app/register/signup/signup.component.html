@@ -1,75 +1,101 @@
 <div class="container">
-  <div class="row">
- 
-    <div class="col-md-6">
+  <div class="row" id="dot">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-10">
       <form [formGroup]="myform">
-        <label>Firstname :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your firstname"
-          formControlName="firstname"
-        /><br />
-        <label>Middlename :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your middlename"
-          formControlName="middlename"
-
-        /><br />
-        <label>Lastname :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your lastname"
-          formControlName="lastname"
-
-        /><br />
-        <label>Fullname :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your fullname"
-          formControlName="fullname"
-          
-        /><br />
-        <label>Email :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your email"
-          formControlName="email"
-
-        /><br />
-        <label>Password :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your password"
-          formControlName="password"
-
-        /><br />
-        <label>Confirm Password :</label>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Enter your confirm password"
-          formControlName="confirmpassword"
-
-        /><br />
-        <div class="form-group">
+        <div class="row name">
+          <div class="col-md-4">
+            <label>Firstname :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your firstname"
+              formControlName="firstname"
+            /><br />
+          </div>
+          <div class="col-md-4">
+            <label>Middlename :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your middlename"
+              formControlName="middlename"
+            /><br />
+          </div>
+          <div class="col-md-4">
+            <label>Lastname :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your lastname"
+              formControlName="lastname"
+            /><br />
+          </div>
+        </div>
+        <div class="row name1">
+          <div class="col-md-6">
+            <label>Fullname :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your fullname"
+              formControlName="fullname"
+            /><br />
+          </div>
+          <div class="col-md-6">
+            <label>Email :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your email"
+              formControlName="email"
+            /><br />
+          </div>
+        </div>
+        <div class="row name1">
+          <div class="col-md-6">
+            <label>Password :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your password"
+              formControlName="password"
+            /><br />
+          </div>
+          <div class="col-md-6">
+            <label>Confirm Password :</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Enter your confirm password"
+              formControlName="confirmpassword"
+            /><br />
+          </div>
+        </div>
+        <div class="name1">
           <label for="gender">Gender<span class="required">*</span> </label
           ><br />
           <div class="wrapper">
-            <input type="radio" name="gender" formControlName="gender" id="option-1" value="Male" />
-            <input type="radio" name="gender" formControlName="gender" id="option-2" value="Female" />
+            <input
+              type="radio"
+              name="gender"
+              formControlName="gender"
+              id="option-1"
+              value="Male"
+            />
+            <input
+              type="radio"
+              name="gender"
+              formControlName="gender"
+              id="option-2"
+              value="Female"
+            />
             <label for="option-1" class="option option-1"> Male </label>
             <label for="option-2" class="option option-2"> Female </label>
           </div>
         </div>
         <br />
-        <select id="city" formControlName="city"  name="city">
+        <select class="name1" id="city" formControlName="city" name="city">
           <option value="">Select City</option>
 
           <option value="Ausa">Ausa</option>
@@ -95,10 +121,9 @@
         </select>
 
         <button type="button" (click)="submit()">Save</button>
+
+        <p class="name1">Already've account ?<a routerLink="">Login</a> </p>
       </form>
-    </div>
-    <div class="right-side col-md-6">
-      <img src="../../../assets/image/log-in.png">
     </div>
   </div>
 </div>
